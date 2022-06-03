@@ -319,7 +319,7 @@ ESP_Folder:AddToggle({
 })
 local Misc = Window:AddFolder("Diğer")
 Misc:AddToggle({
-    text = "Fullbright",
+    text = "Hep Aydınlık",
     callback = function(A_1)
         if A_1 == true then
             Lighting.Ambient = Color3.new(1, 1, 1)
