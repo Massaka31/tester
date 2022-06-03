@@ -222,7 +222,7 @@ end
 
 --// UI Library \\--
 Window:AddToggle({
-    text = "Attack-Aura",
+    text = "Otomatik Saldırı",
     flag = "Attack",
     callback = function()
         while Library.flags.Attack == true and wait() do
@@ -236,10 +236,10 @@ Window:AddToggle({
     end
 })
 Window:AddToggle({
-    text = "SilentAim"
+    text = "Aim Yardımcısı"
 })
 Window:AddToggle({
-    text = "Auto-Arrest",
+    text = "Otomatik Tutuklama",
     flag = "Arrest",
     callback = function()
         while Library.flags.Arrest == true and wait() do
@@ -258,7 +258,7 @@ Window:AddToggle({
     end
 })
 Window:AddToggle({
-    text = "Collect Dropped Cash",
+    text = "Yere Düşen Paraları Otomatik Alma",
     flag = "Cash",
     callback = function()
         while Library.flags.Cash == true and task.wait() do
@@ -272,35 +272,35 @@ Window:AddToggle({
     end
 })
 Window:AddSlider({
-    text = "Attack-Range",
+    text = "Saldırı Mesafesi",
     flag = "Range",
     min = 2,
     max = 18,
     float = 0.25
 })
-local ESP_Folder = Window:AddFolder("ESP Settings")
+local ESP_Folder = Window:AddFolder("Görüş Ayarları")
 ESP_Folder:AddToggle({
-    text = "Players",
+    text = "Oyuncular",
     callback = function(A_1)
         ESP.Players = A_1
     end
 })
 ESP_Folder:AddToggle({
-    text = "Robbable",
+    text = "Kasalar",
     flag = "Rob"
 })
 ESP_Folder:AddToggle({
-    text = "Items/Scrap",
+    text = "Eşyalar Ve Çöpler",
     flag = "Scrap"
 })
 ESP_Folder:AddToggle({
-    text = "Tracers",
+    text = "Çizgi",
     callback = function(A_1)
         ESP.Tracers = A_1
     end
 })
 ESP_Folder:AddToggle({
-    text = "Show Equipped",
+    text = "Kuşanılanı Görme",
     flag = "Equipped",
     callback = function(A_1)
         for _, A_2 in next, Players:GetPlayers() do
@@ -317,7 +317,7 @@ ESP_Folder:AddToggle({
         end
     end
 })
-local Misc = Window:AddFolder("Misc")
+local Misc = Window:AddFolder("Diğer")
 Misc:AddToggle({
     text = "Fullbright",
     callback = function(A_1)
@@ -333,11 +333,11 @@ Misc:AddToggle({
     end
 })
 Misc:AddToggle({
-    text = "Auto-Dumbell",
+    text = "Otomatik Dumbell",
     flag = "Dumbell"
 })
 Misc:AddToggle({
-    text = "Inf. Energy",
+    text = "Sınırsız Enerji",
     flag = "Energy",
     callback = function(A_1)
         -- Check
@@ -365,7 +365,7 @@ Misc:AddToggle({
     end
 })
 Misc:AddBind({
-    text = "Teleport Forwards",
+    text = "İleriye Işınlanma",
     callback = function()
         pcall(function()
             Player.Character.HumanoidRootPart.CFrame *= CFrame.new(0, 0, -Library.flags.TP_Distance)
@@ -373,13 +373,13 @@ Misc:AddBind({
     end
 })
 Misc:AddSlider({
-    text = "Teleport Distance",
+    text = "İleriye Işınlanma",
     flag = "TP_Distance",
     value = 5,
     min = 1,
     max = 10
 })
-local Teleports = Window:AddFolder("Teleports")
+local Teleports = Window:AddFolder("Işınlanma")
 local Destinations = {}
 for _, A_1 in next, Buttons:GetChildren() do
     local Name = A_1:FindFirstChild("ToolName")
@@ -390,7 +390,7 @@ for _, A_1 in next, Buttons:GetChildren() do
 end
 table.sort(Destinations)
 Teleports:AddList({
-    text = "Destination",
+    text = "Nereye Işınlanacaksın Seç",
     values = Destinations,
     callback = function(A_1)
         -- Check
