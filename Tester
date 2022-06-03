@@ -373,7 +373,7 @@ Misc:AddBind({
     end
 })
 Misc:AddSlider({
-    text = "İleriye Işınlanma",
+    text = "İleriye Işınlanma Mesafesi",
     flag = "TP_Distance",
     value = 5,
     min = 1,
